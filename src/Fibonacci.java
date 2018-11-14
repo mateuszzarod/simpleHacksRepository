@@ -29,7 +29,6 @@ public class Fibonacci {
         return n;
     }
 
-
     public static long fibonacciRecursion(int n) {
         if (n <= 1) return n;
         else return fibonacciRecursion(n - 1) + fibonacciRecursion(n - 2);

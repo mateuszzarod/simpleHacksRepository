@@ -14,10 +14,9 @@ public class FirstNonRepeating {
         for (int i = 0; i < arg.length(); i++) {
             char c = arg.charAt(i);
             //albo informuje że taki wynik juz jest
-            if (score.containsKey(c)) {
-                System.out.println(score.get(c));
-                //jeśli nie ma to go wrzuca w sztuk 1
-            } else score.put(c, 1);
+            if (!score.containsKey(c)) {
+                score.put(c, 1);
+            }
         }
 
         //druga pętla która interuje przez wyraz raz jeszcze

@@ -14,6 +14,7 @@ public class User implements PowerManager {
         this.surname = surname;
         this.id = id;
         listOfPowers = new ArrayList<>();
+        listOfPowers.add(Power.CAN_WHATEVER);
         listOfPowers.add(Power.CAN_WRITE);
     }
 
@@ -29,6 +30,10 @@ public class User implements PowerManager {
         return id;
     }
 
+    public int getPowersSize() {
+        return listOfPowers.size();
+    }
+
     public List<Power> getListOfPowers() {
         return listOfPowers;
     }
@@ -39,11 +44,17 @@ public class User implements PowerManager {
     }
 
     @Override
-    public void removePower(Power power) {
-        listOfPowers.remove(power);
+    public boolean removePower(Power power) {
+        boolean result = false;
+        if (listOfPowers.contains(power)) {
+            listOfPowers.remove(power);
+            result = true;
+        }
+        return result;
     }
 
     public static List<Power> checkPowers(User user) {
         return user.getListOfPowers();
+
     }
 }

@@ -15,6 +15,7 @@ public class FziStef {
         for (int i=0; i<cityNumber; i++){
             //przypisz do zmiennej przychód + -
             income = sc.nextInt();
+            //zrób pętlę
             //dodaj go do wyniku
             result += income;
             //jeśli zejdzie poniżej zera to ustaw go na zero i licz od nowa
